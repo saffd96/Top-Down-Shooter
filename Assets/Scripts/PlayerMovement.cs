@@ -2,12 +2,25 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    #region Variables
+
     [SerializeField] private float speed;
+    [SerializeField] private Animator animator;
+    [SerializeField] private string moveSpeedName = "MoveSpeed";
+
+    private int moveSpeedId;
 
     private Rigidbody2D rb;
 
+    #endregion
+
+
+    #region Unity Lifecycle
+
     private void Awake()
     {
+        moveSpeedId = Animator.StringToHash(moveSpeedName);
+
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -17,13 +30,18 @@ public class PlayerMovement : MonoBehaviour
         Rotate();
     }
 
+    #endregion
+
+
+    #region Private Methods
+
     private void Move()
     {
-        var direction = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        var direction = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
+        
+        rb.velocity = direction * speed;
 
-        Debug.Log(direction);
-
-        rb.velocity = direction.normalized * (speed * Time.deltaTime);
+        animator.SetFloat(moveSpeedId, direction.magnitude);
     }
 
     private void Rotate()
@@ -33,4 +51,6 @@ public class PlayerMovement : MonoBehaviour
 
         transform.up = directionInvert;
     }
+
+    #endregion
 }

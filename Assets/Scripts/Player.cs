@@ -1,31 +1,51 @@
+using System.Collections;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player : BaseUnit
 {
-    [SerializeField] private GameObject bulletPrefab;
-    [SerializeField] private Transform bulletSpawnPoint;
-    [SerializeField] private float shootDelay;
+    #region Variables
 
-    private float currentShootDelay;
+    [Header("Base settings")]
+
+    [SerializeField] private float resetSceneTime;
+    
+    [SerializeField] private PlayerMovement playerMovement;
+   
+    #endregion
+    
+    #region Unity Lifecycle
 
     private void Update()
     {
-        Shoot();
-    }
-
-    private void Shoot()
-    {
-        if (Input.GetButton("Fire1") && currentShootDelay <= 0)
+        if (IsDead == false)
         {
-            currentShootDelay = shootDelay;
-            CreateBullet();
+            Shoot();
         }
-
-        currentShootDelay -= Time.deltaTime;
     }
 
-    private void CreateBullet()
+    #endregion
+
+
+    #region Private Methods
+
+    protected override void Die()
     {
-        Instantiate(bulletPrefab, bulletSpawnPoint.position, transform.rotation);
+        base.Die();
+        playerMovement.enabled = false;
+        StartCoroutine(nameof(ExecuteAfterTime));
     }
+
+    #endregion
+
+
+    #region Coroutines
+
+    private IEnumerator ExecuteAfterTime()
+    {
+        yield return new WaitForSeconds(resetSceneTime);
+        SceneManager.Instance.ResetLevel();
+    }
+
+    #endregion
+
 }
