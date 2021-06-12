@@ -11,7 +11,7 @@ public class BaseUnit : MonoBehaviour
     [SerializeField] private CircleCollider2D circleCollider2D;
     [SerializeField] private new Rigidbody2D rigidbody2D; //rider сказал добавить new
 
-    [SerializeField] private float hp;
+    [SerializeField] private float playerHp;
     [SerializeField] private float shootDelay;
 
     [Header("Animation settings")]
@@ -19,9 +19,9 @@ public class BaseUnit : MonoBehaviour
     [SerializeField] private string dieTriggerName = "IsDead";
 
     [Header("DEV")]
-    [SerializeField] private float currentHp;
+    [SerializeField] private float currentPlayerHp;
     
-    private float maxHp; 
+    private float maxPlayerHp; 
     private int shootId;
     private int dieId;
     private float currentShootDelay;
@@ -32,8 +32,8 @@ public class BaseUnit : MonoBehaviour
 
     private void Start()
     {
-        maxHp = hp;
-        currentHp = hp;
+        maxPlayerHp = playerHp;
+        currentPlayerHp = playerHp;
         shootId = Animator.StringToHash(shootTriggerName);
         dieId = Animator.StringToHash(dieTriggerName);
 
@@ -42,11 +42,11 @@ public class BaseUnit : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        var damageDealer = other.GetComponent<DamageDealer>();
+        var hpChanger = other.GetComponent<HpChanger>();
 
-        if (damageDealer != null)
+        if (hpChanger != null)
         {
-            ApplyDamage(damageDealer.Damage);
+            ApplyDamage(hpChanger.HpAmount);
             Destroy(other.gameObject);
         }
     }
@@ -85,18 +85,18 @@ public class BaseUnit : MonoBehaviour
         rigidbody2D.Sleep(); //это если во время бега подстрелят
     }
 
-    internal void ApplyDamage(float damage)
+    internal void ApplyDamage(float hpAmount)
     {
         if (IsDead != false) return;
 
-        currentHp -= damage;
+        currentPlayerHp -= hpAmount;
 
-        if (currentHp > hp)
+        if (currentPlayerHp > playerHp)
         {
-            currentHp = maxHp;
+            currentPlayerHp = maxPlayerHp;
         }
 
-        if (currentHp <= 0)
+        if (currentPlayerHp <= 0)
         {
             Die();
         }
