@@ -9,13 +9,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9212213526099890691}
+  - component: {fileID: -2234080285893507672}
   - component: {fileID: 5304156225164280499}
   - component: {fileID: 2634507425367722134}
   - component: {fileID: 3608053370858198695}
   - component: {fileID: 8486195973155117264}
   m_Layer: 10
   m_Name: FirsAidKit
-  m_TagString: Untagged
+  m_TagString: FirstAidKit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34,6 +35,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-2234080285893507672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9035195233576272574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6418d7ae7220477bb1f2455bfe59db0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &5304156225164280499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46,7 +59,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2316202cc942232438409cae6aa8a056, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: -5
+  hpAmount: 5
 --- !u!212 &2634507425367722134
 SpriteRenderer:
   m_ObjectHideFlags: 0

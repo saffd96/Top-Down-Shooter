@@ -5,36 +5,40 @@ public class BaseUnit : MonoBehaviour
     #region Variables
 
     [Header("Base settings")]
-    [SerializeField] private GameObject bulletPrefab;
-    [SerializeField] private Transform bulletSpawnPoint;
-    [SerializeField] private Animator animator;
+    [SerializeField] protected Animator Animator;
     [SerializeField] private CircleCollider2D circleCollider2D;
-    [SerializeField] private new Rigidbody2D rigidbody2D; //rider сказал добавить new
+    [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private float hp;
 
-    [SerializeField] private float playerHp;
-    [SerializeField] private float shootDelay;
+    [Header("Attack")]
+    [SerializeField]
+    protected float Damage = 1;
+    [SerializeField] protected float AttackDelay;
 
     [Header("Animation settings")]
-    [SerializeField] private string shootTriggerName = "Shoot";
+    [SerializeField]
+    protected string ShootTriggerName = "Shoot";
     [SerializeField] private string dieTriggerName = "IsDead";
 
     [Header("DEV")]
-    [SerializeField] private float currentPlayerHp;
-    
-    private float maxPlayerHp; 
+    [SerializeField] private float currentHp;
+
+    private float maxHp;
     private int shootId;
     private int dieId;
-    private float currentShootDelay;
+    protected float CurrentShootDelay;
     protected internal bool IsDead;
 
     #endregion
 
 
-    private void Start()
+    #region Unity Lifecycle
+
+    protected virtual void Start()
     {
-        maxPlayerHp = playerHp;
-        currentPlayerHp = playerHp;
-        shootId = Animator.StringToHash(shootTriggerName);
+        maxHp = hp;
+        currentHp = hp;
+        shootId = Animator.StringToHash(ShootTriggerName);
         dieId = Animator.StringToHash(dieTriggerName);
 
         IsDead = false;
@@ -44,59 +48,66 @@ public class BaseUnit : MonoBehaviour
     {
         var hpChanger = other.GetComponent<HpChanger>();
 
-        if (hpChanger != null)
+        if (hpChanger == null) return;
+
+        if (other.CompareTag(Tags.FirstAidKit))
         {
-            ApplyDamage(hpChanger.HpAmount);
-            Destroy(other.gameObject);
+            ChangeHealth(-hpChanger.HpAmount);
         }
+        else
+        {
+            ChangeHealth(hpChanger.HpAmount);
+        }
+
+        Destroy(other.gameObject);
     }
+
+    #endregion
 
 
     #region Private Methods
 
-    protected virtual void Shoot()
+    protected virtual void Attack()
     {
-        if (Input.GetButton("Fire1") && currentShootDelay <= 0)
+        if (CurrentShootDelay <= 0)
         {
-            currentShootDelay = shootDelay;
-            PlayShootAnimation();
-            CreateBullet();
+            CurrentShootDelay = AttackDelay;
+            PlayAttackAnimation();
         }
 
-        currentShootDelay -= Time.deltaTime;
+        CurrentShootDelay -= Time.deltaTime;
     }
 
-    protected void CreateBullet()
+    protected void PlayAttackAnimation()
     {
-        Instantiate(bulletPrefab, bulletSpawnPoint.position, transform.rotation);
-    }
-
-    protected void PlayShootAnimation()
-    {
-        animator.SetTrigger(shootId);
+        Animator.SetTrigger(shootId);
     }
 
     protected virtual void Die()
     {
         IsDead = true;
-        animator.SetTrigger(dieId);
-
+        Animator.SetTrigger(dieId);
         circleCollider2D.enabled = false;
-        rigidbody2D.Sleep(); //это если во время бега подстрелят
+        rb.Sleep();
     }
 
-    internal void ApplyDamage(float hpAmount)
+    #endregion
+
+
+    #region Public Methods
+
+    public void ChangeHealth(float hpAmount)
     {
-        if (IsDead != false) return;
+        if (IsDead) return;
 
-        currentPlayerHp -= hpAmount;
+        currentHp -= hpAmount;
 
-        if (currentPlayerHp > playerHp)
+        if (currentHp > hp)
         {
-            currentPlayerHp = maxPlayerHp;
+            currentHp = maxHp;
         }
 
-        if (currentPlayerHp <= 0)
+        if (currentHp <= 0)
         {
             Die();
         }

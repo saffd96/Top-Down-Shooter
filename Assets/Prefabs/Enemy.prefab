@@ -51,12 +51,14 @@ MonoBehaviour:
   bulletSpawnPoint: {fileID: 1228009461103562111}
   animator: {fileID: 6408181426456671402}
   circleCollider2D: {fileID: 1228009460895667511}
-  rigidbody2D: {fileID: 1228009460895667497}
-  hp: 10
+  rb: {fileID: 1228009460895667497}
+  playerHp: 10
   shootDelay: 1
   shootTriggerName: Shoot
   dieTriggerName: IsDead
+  currentPlayerHp: 0
   shootPeriod: 1
+  startShootingDelay: 1
 --- !u!58 &1228009460895667511
 CircleCollider2D:
   m_ObjectHideFlags: 0
