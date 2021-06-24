@@ -4,18 +4,7 @@ public class ZombieMovement : BaseMovement
 {
     #region Variables
 
-    private Transform playerTransform;
     private Vector3 targetPosition;
-
-    #endregion
-
-
-    #region Unity Lifecycle
-
-    private void Start()
-    {
-        playerTransform = FindObjectOfType<Player>().transform;
-    }
 
     #endregion
 
@@ -41,8 +30,7 @@ public class ZombieMovement : BaseMovement
 
     protected override void Rotate()
     {
-        var playerPosition = playerTransform.position;
-        Direction = (playerPosition - CachedTransform.position).normalized;
+        Direction = (targetPosition - CachedTransform.position).normalized;
 
         base.Rotate();
     }
@@ -56,7 +44,6 @@ public class ZombieMovement : BaseMovement
     {
         targetPosition = position;
     }
-
 
     #endregion
 }

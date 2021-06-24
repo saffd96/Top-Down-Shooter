@@ -11,8 +11,7 @@ public class BaseUnit : MonoBehaviour
     [SerializeField] private float hp;
 
     [Header("Attack")]
-    [SerializeField]
-    protected float Damage = 1;
+    [SerializeField] protected float Damage = 1;
     [SerializeField] protected float AttackDelay;
 
     [Header("Animation settings")]

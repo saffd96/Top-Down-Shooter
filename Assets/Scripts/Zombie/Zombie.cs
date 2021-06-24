@@ -6,7 +6,6 @@ public class Zombie : BaseMeleeUnit
     private enum State
     {
         Idle,
-        Moving,
         Attack,
         Chase,
         Dead,
@@ -21,8 +20,9 @@ public class Zombie : BaseMeleeUnit
     [SerializeField] private float chaseRadius = 15;
     [SerializeField] private float moveRadius = 10;
     [SerializeField] private bool isPatrol;
-    [SerializeField] private Transform patrolPoint;
-    
+    [SerializeField] private Transform[] patrolPoints;
+    [SerializeField] private float dist = 0.1f;
+
     private Player player;
     private ZombieMovement zombieMovement;
 
@@ -31,10 +31,10 @@ public class Zombie : BaseMeleeUnit
 
     private Vector3 startPosition;
     private Vector3 targetPosition;
-    private Vector3 patrolPointPosition;
 
     private State currentState;
-    
+    private int currentPatrolPointIndex;
+
     #endregion
 
 
@@ -57,25 +57,34 @@ public class Zombie : BaseMeleeUnit
     private void Awake()
     {
         cachedTransform = transform;
-        targetPosition = patrolPointPosition;
         startPosition = cachedTransform.position;
         zombieMovement = GetComponent<ZombieMovement>();
-        SetState(State.Idle);
+
+        if (patrolPoints != null && patrolPoints.Length > 0)
+        {
+            isPatrol = true;
+            currentPatrolPointIndex = 0;
+        }
+        else
+        {
+            isPatrol = false;
+            currentPatrolPointIndex = -1;
+        }
+
+        SetState(isPatrol ? State.Patrol : State.Idle);
     }
 
     protected override void Start()
     {
         base.Start();
 
-        SetState(isPatrol ? State.Patrol : State.Idle);
-        
         player = FindObjectOfType<Player>();
         playerTransform = player.transform;
     }
 
     private void Update()
     {
-        if (currentState == State.Dead && player.IsDead) return;
+        if (currentState == State.Dead || player.IsDead) return;
 
         CheckNewState();
         UpdateCurrentState();
@@ -88,28 +97,56 @@ public class Zombie : BaseMeleeUnit
 
     private void SetState(State newState)
     {
+        if (currentState == newState)
+        {
+            return;
+        }
+
         switch (newState)
         {
             case State.Idle:
                 SetActiveMovement(false);
+
+                break;
+            case State.Dead:
+                SetActiveMovement(false);
+
                 break;
             case State.Attack:
                 SetActiveMovement(false);
+
                 break;
             case State.Chase:
                 SetActiveMovement(true);
+                startPosition = transform.position;
+
                 break;
             case State.Return:
                 SetActiveMovement(true);
                 zombieMovement.SetTargetPosition(startPosition);
+
                 break;
             case State.Patrol:
                 SetActiveMovement(true);
-                zombieMovement.SetTargetPosition(patrolPoint.position);
+                targetPosition = patrolPoints[currentPatrolPointIndex].position;
+                zombieMovement.SetTargetPosition(targetPosition);
+
                 break;
         }
 
         currentState = newState;
+    }
+
+    private void SetNewPatrolPoint()
+    {
+        currentPatrolPointIndex++;
+
+        if (currentPatrolPointIndex >= patrolPoints.Length)
+        {
+            currentPatrolPointIndex = 0;
+        }
+
+        targetPosition = patrolPoints[currentPatrolPointIndex].position;
     }
 
     private void CheckNewState()
@@ -120,17 +157,23 @@ public class Zombie : BaseMeleeUnit
         {
             SetState(State.Attack);
         }
-        
+
         else if (distance < moveRadius)
         {
-            SetState(State.Moving);
+            SetState(State.Chase);
         }
 
         else if (distance > chaseRadius)
         {
-            if (currentState != State.Patrol) return;
+            if (currentState == State.Chase)
+            {
+                SetState(State.Return);
+            }
+        }
 
-            SetState(isPatrol ? State.Patrol : State.Return);
+        if (currentState == State.Return && Vector3.Distance(transform.position, startPosition) <= dist)
+        {
+            SetState(isPatrol ? State.Patrol : State.Idle);
         }
     }
 
@@ -140,40 +183,57 @@ public class Zombie : BaseMeleeUnit
         {
             case State.Return:
                 ReturnToStartPosition();
+
                 break;
             case State.Attack:
                 Attack();
+
                 break;
             case State.Chase:
                 Chase();
+
                 break;
             case State.Patrol:
                 Patrol();
+                targetPosition = patrolPoints[currentPatrolPointIndex].position;
+                zombieMovement.SetTargetPosition(targetPosition);
+
                 break;
         }
     }
 
     private void ReturnToStartPosition()
     {
-        if (Vector3.Distance(cachedTransform.position, startPosition) <= 0)
+        if (Vector3.Distance(cachedTransform.position, startPosition) <= dist)
         {
             SetState(State.Idle);
         }
     }
 
+    protected override void Attack()
+    {
+        base.Attack();
+        player.ChangeHealth(Damage);
+    }
+
+    protected override void Die()
+    {
+        base.Die();
+        SetState(State.Dead);
+    }
+
     private void Patrol()
     {
-        if (Vector3.Distance(cachedTransform.position, targetPosition) <= 0)
+        if (Vector3.Distance(cachedTransform.position, targetPosition) <= dist)
         {
-            targetPosition = startPosition; //тут запутался :(
-            startPosition = patrolPointPosition;
+            SetNewPatrolPoint();
             zombieMovement.SetTargetPosition(targetPosition);
-        }    
+        }
     }
 
     private void Chase()
     {
-        targetPosition = (playerTransform.position - targetPosition);
+        targetPosition = playerTransform.position;
         zombieMovement.SetTargetPosition(targetPosition);
     }
 
@@ -181,6 +241,6 @@ public class Zombie : BaseMeleeUnit
     {
         zombieMovement.enabled = isActive;
     }
-    
+
     #endregion
 }
