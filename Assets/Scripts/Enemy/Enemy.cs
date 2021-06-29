@@ -19,7 +19,7 @@ public class Enemy : BaseRangeUnit
 
     #region Unity Lifecycle
 
-    private void Awake()
+    protected void Awake()
     {
         shootRoutine = StartCoroutine(StartShooting());
     }

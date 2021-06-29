@@ -54,7 +54,7 @@ public class Zombie : BaseMeleeUnit
         Gizmos.DrawWireSphere(position, AttackRadius);
     }
 
-    private void Awake()
+    protected void Awake()
     {
         cachedTransform = transform;
         startPosition = cachedTransform.position;

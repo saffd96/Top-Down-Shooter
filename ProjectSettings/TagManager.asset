@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - FirstAidKit
+  - EnterPoint
+  - ExitPoint
   layers:
   - Default
   - TransparentFX
@@ -17,8 +19,8 @@ TagManager:
   - PlayerBullet
   - EnemyBullet
   - PickUps
-  - 
-  - 
+  - WaterUser
+  - SceneLoaders
   - 
   - 
   - 
@@ -39,6 +41,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: BackGround
+    uniqueID: 2128663093
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
