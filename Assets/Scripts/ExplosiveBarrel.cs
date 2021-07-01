@@ -55,6 +55,11 @@ public class ExplosiveBarrel : DamageableObject
         {
             var unit = baseUnit.GetComponent<DamageableObject>();
 
+            if (unit is ExplosiveBarrel explosiveBarrel)
+            {
+                explosiveBarrel.Explode();
+            }
+            
             if (unit!=null)
             {
                 unit.ChangeHealth(damage);
