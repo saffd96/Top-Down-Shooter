@@ -1,70 +1,50 @@
+using System;
 using UnityEngine;
 
-public class BaseUnit : MonoBehaviour
+public class BaseUnit : DamageableObject
 {
     #region Variables
-
-    [Header("Base settings")]
-    [SerializeField] protected Animator Animator;
-    [SerializeField] private CircleCollider2D circleCollider2D;
-    [SerializeField] private Rigidbody2D rb;
-    [SerializeField] private float hp;
 
     [Header("Attack")]
     [SerializeField] protected float Damage = 1;
     [SerializeField] protected float AttackDelay;
+    [SerializeField] private Rigidbody2D rb;
+    [SerializeField] protected CircleCollider2D CircleCollider2D;
 
     [Header("Animation settings")]
-    [SerializeField]
-    protected string ShootTriggerName = "Shoot";
+    [SerializeField] protected string ShootTriggerName = "Shoot";
     [SerializeField] private string dieTriggerName = "IsDead";
 
-    [Header("DEV")]
-    [SerializeField] private float currentHp;
-
-    private float maxHp;
-    private int shootId;
     private int dieId;
+    private int shootId;
     protected float CurrentShootDelay;
-    protected internal bool IsDead;
 
     #endregion
 
 
+
     #region Unity Lifecycle
 
-    protected virtual void Start()
+    protected new virtual void Start()
     {
-        maxHp = hp;
-        currentHp = hp;
-        shootId = Animator.StringToHash(ShootTriggerName);
+        base.Start();
         dieId = Animator.StringToHash(dieTriggerName);
-
-        IsDead = false;
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        var hpChanger = other.GetComponent<HpChanger>();
-
-        if (hpChanger == null) return;
-
-        if (other.CompareTag(Tags.FirstAidKit))
-        {
-            ChangeHealth(-hpChanger.HpAmount);
-        }
-        else
-        {
-            ChangeHealth(hpChanger.HpAmount);
-        }
-
-        Destroy(other.gameObject);
+        shootId = Animator.StringToHash(ShootTriggerName);
     }
 
     #endregion
 
 
     #region Private Methods
+
+    protected override void Die()
+    {
+        base.Die();
+        CircleCollider2D.enabled = false;
+
+        Animator.SetTrigger(dieId);
+        rb.Sleep();
+    }
 
     protected virtual void Attack()
     {
@@ -80,36 +60,6 @@ public class BaseUnit : MonoBehaviour
     protected void PlayAttackAnimation()
     {
         Animator.SetTrigger(shootId);
-    }
-
-    protected virtual void Die()
-    {
-        IsDead = true;
-        Animator.SetTrigger(dieId);
-        circleCollider2D.enabled = false;
-        rb.Sleep();
-    }
-
-    #endregion
-
-
-    #region Public Methods
-
-    public void ChangeHealth(float hpAmount)
-    {
-        if (IsDead) return;
-
-        currentHp -= hpAmount;
-
-        if (currentHp > hp)
-        {
-            currentHp = maxHp;
-        }
-
-        if (currentHp <= 0)
-        {
-            Die();
-        }
     }
 
     #endregion

@@ -24,7 +24,7 @@ public class Enemy : BaseRangeUnit
         shootRoutine = StartCoroutine(StartShooting());
     }
 
-    protected override void Start()
+    protected new void Start()
     {
         base.Start();
         player = FindObjectOfType<Player>();

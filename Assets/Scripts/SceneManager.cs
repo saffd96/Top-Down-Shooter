@@ -5,30 +5,19 @@ public class SceneManager : SingletonMonoBehaviour<SceneManager>
 {
     #region Variables
 
-    [SerializeField] public Transform ExitPoint;
-   // [SerializeField] private Transform enterPoint;
+    [SerializeField] public Transform enterPoint;
 
-    public string CurrentScene;
+    [SerializeField]private string currentScene;
 
     #endregion
 
 
     #region Unity Lifecycle
 
-    private void Awake()
+    private void Start()
     {
-        base.Awake();
-        UpdateCurrentScene();
-    }
-
-    #endregion
-
-
-    #region Private Methods
-
-    private void UpdateCurrentScene()
-    {
-        CurrentScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
+        SetCurrentScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+        FindObjectOfType<Player>().Reset();
     }
 
     #endregion
@@ -38,14 +27,23 @@ public class SceneManager : SingletonMonoBehaviour<SceneManager>
 
     public void ResetLevel()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(SceneNames.Scene1);
-        UpdateCurrentScene();
+        UnityEngine.SceneManagement.SceneManager.LoadScene(currentScene);
     }
 
     public void LoadScene(string sceneName)
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
-        UpdateCurrentScene();
+        SetCurrentScene(sceneName);
+    }
+
+    #endregion
+
+
+    #region Private Methods
+
+    private void SetCurrentScene(string sceneName)
+    {
+        currentScene = sceneName;
     }
 
     #endregion

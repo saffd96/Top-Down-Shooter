@@ -28,26 +28,11 @@ public class Player : BaseRangeUnit
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("private void OnCollisionEnter(Collision other)");
         if (other.CompareTag(Tags.EnterPoint))
-        {
-            switch (SceneManager.Instance.CurrentScene)
-            {
-                case SceneNames.Scene1:
-                {
-                    SceneManager.Instance.LoadScene(SceneNames.HouseScene);
-                    break;
-                }
-
-                case SceneNames.HouseScene:
-                {
-                    SceneManager.Instance.LoadScene(SceneNames.Scene1);
-                    break;
-                }
-            }
+        { 
+            SceneManager.Instance.LoadScene(SceneNames.HouseScene);
         }
 
-        transform.position = SceneManager.Instance.ExitPoint.position;
     }
 
     #endregion

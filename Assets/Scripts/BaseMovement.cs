@@ -5,8 +5,9 @@ public class BaseMovement : MonoBehaviour
     #region Variables
 
     [SerializeField] protected float Speed;
+    [SerializeField] protected Transform bodyTransform;
+    
     [SerializeField] protected Animator Animator;
-
     [SerializeField] protected string MoveSpeedName = "MoveSpeed";
 
     protected Vector3 Direction;
@@ -22,7 +23,7 @@ public class BaseMovement : MonoBehaviour
 
     private void Awake()
     {
-        CachedTransform = transform;
+        CachedTransform = bodyTransform;
         moveSpeedId = Animator.StringToHash(MoveSpeedName);
         Rb = GetComponent<Rigidbody2D>();
     }

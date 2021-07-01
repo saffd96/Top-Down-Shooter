@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Zombie : BaseMeleeUnit
 {
@@ -22,6 +23,9 @@ public class Zombie : BaseMeleeUnit
     [SerializeField] private bool isPatrol;
     [SerializeField] private Transform[] patrolPoints;
     [SerializeField] private float dist = 0.1f;
+    [SerializeField] private int pickUpCreationRate;
+    [SerializeField] private GameObject pickUpPrefab;
+
 
     private Player player;
     private ZombieMovement zombieMovement;
@@ -220,6 +224,11 @@ public class Zombie : BaseMeleeUnit
     {
         base.Die();
         SetState(State.Dead);
+        
+        if (NeedCreatePickUp())
+        {
+            Instantiate(pickUpPrefab, transform.position, Quaternion.identity);
+        }
     }
 
     private void Patrol()
@@ -240,6 +249,12 @@ public class Zombie : BaseMeleeUnit
     private void SetActiveMovement(bool isActive)
     {
         zombieMovement.enabled = isActive;
+    }
+    
+    private bool NeedCreatePickUp()
+    {
+        var randomNumber = Random.Range(1, 101);
+        return pickUpCreationRate >= randomNumber;
     }
 
     #endregion
