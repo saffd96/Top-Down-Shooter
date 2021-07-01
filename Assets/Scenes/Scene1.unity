@@ -8523,18 +8523,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8918392065751815139, guid: c896219c95547cc489d01fe2c42af200, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8918392065751815148, guid: c896219c95547cc489d01fe2c42af200, type: 3}
-      propertyPath: m_Icon
-      value: 
-      objectReference: {fileID: 7148428337604731935, guid: 0000000000000000d000000000000000, type: 0}
-    - target: {fileID: 8918392065816546219, guid: c896219c95547cc489d01fe2c42af200, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8918392065816546228, guid: c896219c95547cc489d01fe2c42af200, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -8579,6 +8567,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8918392065816546230, guid: c896219c95547cc489d01fe2c42af200, type: 3}
+      propertyPath: bodyTransform
+      value: 
+      objectReference: {fileID: 1112964952}
     - target: {fileID: 8918392065816546231, guid: c896219c95547cc489d01fe2c42af200, type: 3}
       propertyPath: m_Name
       value: Player
@@ -45242,6 +45234,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1112964952 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 86392035494259699, guid: c896219c95547cc489d01fe2c42af200, type: 3}
+  m_PrefabInstance: {fileID: 164885009}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1148727754
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -14,8 +14,7 @@ public class PlayerMovement : BaseMovement
     protected override void Rotate()
     {
         var mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Direction = Vector3.ClampMagnitude((mousePosition - bodyTransform.position),1f);
-      //  Direction = (mousePosition - CachedTransform.position).normalized;
+        Direction = (mousePosition - CachedTransform.position).normalized;
       
         base.Rotate();
     }
