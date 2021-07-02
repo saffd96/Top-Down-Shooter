@@ -214,7 +214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 5
-  bodyTransform: {fileID: 8132651335120276277}
+  BodyTransform: {fileID: 8132651335120276277}
   Animator: {fileID: 8651591612242634057}
   MoveSpeedName: MoveSpeed
 --- !u!50 &8651591613201724440

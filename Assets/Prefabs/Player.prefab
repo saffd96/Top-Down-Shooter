@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &109999532720791541
+--- !u!1 &2106421584471402106
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 86392035494259699}
-  m_Layer: 5
+  - component: {fileID: 4659041762894007319}
+  m_Layer: 6
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &86392035494259699
+--- !u!4 &4659041762894007319
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 109999532720791541}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_GameObject: {fileID: 2106421584471402106}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -59,7 +59,7 @@ Transform:
   m_LocalPosition: {x: -0.375, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 86392035494259699}
+  m_Father: {fileID: 4659041762894007319}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8918392065816546231
@@ -71,8 +71,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8918392065816546228}
+  - component: {fileID: 5654244558145107302}
   - component: {fileID: 8918392065816546218}
-  - component: {fileID: 8918392065816546230}
   - component: {fileID: 8918392065816546219}
   - component: {fileID: 8918392065816546229}
   m_Layer: 6
@@ -94,10 +94,26 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7041829845690012935}
-  - {fileID: 86392035494259699}
+  - {fileID: 4659041762894007319}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5654244558145107302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8918392065816546231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 275ffd049be1fca4abce9eba9e79dcfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 10
+  BodyTransform: {fileID: 4659041762894007319}
+  Animator: {fileID: 1919612529209713056}
+  MoveSpeedName: MoveSpeed
 --- !u!114 &8918392065816546218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,23 +139,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 9035195233576272574, guid: 52421bf1ecfcd4f4ea6e9dd67f297627, type: 3}
   projectileSpawnPoint: {fileID: 8918392065751815139}
   resetSceneTime: 3
-  playerMovement: {fileID: 8918392065816546230}
---- !u!114 &8918392065816546230
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8918392065816546231}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 275ffd049be1fca4abce9eba9e79dcfa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Speed: 10
-  bodyTransform: {fileID: 86392035494259699}
-  Animator: {fileID: 1919612529209713056}
-  MoveSpeedName: MoveSpeed
+  playerMovement: {fileID: 5654244558145107302}
 --- !u!58 &8918392065816546219
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -176,7 +176,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!1 &8918392067667528063
 GameObject:
   m_ObjectHideFlags: 0
@@ -203,10 +203,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8918392067667528063}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.25, y: -1.15, z: 0}
+  m_LocalPosition: {x: -0.25, y: -1.1499996, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 86392035494259699}
+  m_Father: {fileID: 4659041762894007319}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8918392067667528061

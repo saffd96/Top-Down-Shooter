@@ -8439,14 +8439,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 398584134}
     m_Modifications:
     - target: {fileID: 4659614339621942280, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
-      propertyPath: patrolPoint
-      value: 
-      objectReference: {fileID: 93911355}
-    - target: {fileID: 4659614339621942280, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
-      propertyPath: patrolPoints.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4659614339621942280, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
       propertyPath: patrolPoints.Array.data[0]
       value: 
       objectReference: {fileID: 2056568781}
@@ -8454,21 +8446,9 @@ PrefabInstance:
       propertyPath: patrolPoints.Array.data[1]
       value: 
       objectReference: {fileID: 1379415643}
-    - target: {fileID: 4659614339621942280, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
-      propertyPath: patrolPoints.Array.data[2]
-      value: 
-      objectReference: {fileID: 1814773064}
-    - target: {fileID: 7085695601629998418, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
-      propertyPath: cam
-      value: 
-      objectReference: {fileID: 519420032}
     - target: {fileID: 8651591613201724445, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
       propertyPath: m_Name
       value: ZombieFemale1 (6)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8651591613201724446, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
-      propertyPath: Speed
-      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8651591613201724447, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
       propertyPath: m_RootOrder
@@ -8516,6 +8496,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
+--- !u!4 &159526984 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8918392067667528062, guid: c896219c95547cc489d01fe2c42af200, type: 3}
+  m_PrefabInstance: {fileID: 164885009}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &159526985 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1919612529209713056, guid: c896219c95547cc489d01fe2c42af200, type: 3}
+  m_PrefabInstance: {fileID: 164885009}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &164885009
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8523,17 +8513,41 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4659041762894007319, guid: c896219c95547cc489d01fe2c42af200, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7041829845690012935, guid: c896219c95547cc489d01fe2c42af200, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8918392065751815139, guid: c896219c95547cc489d01fe2c42af200, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8918392065751815148, guid: c896219c95547cc489d01fe2c42af200, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8918392065816546218, guid: c896219c95547cc489d01fe2c42af200, type: 3}
+      propertyPath: hpBar
+      value: 
+      objectReference: {fileID: 1492324281}
+    - target: {fileID: 8918392065816546218, guid: c896219c95547cc489d01fe2c42af200, type: 3}
+      propertyPath: hpBarPosition
+      value: 
+      objectReference: {fileID: 1492324277}
     - target: {fileID: 8918392065816546228, guid: c896219c95547cc489d01fe2c42af200, type: 3}
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8918392065816546228, guid: c896219c95547cc489d01fe2c42af200, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -34.93
+      value: -33.95
       objectReference: {fileID: 0}
     - target: {fileID: 8918392065816546228, guid: c896219c95547cc489d01fe2c42af200, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 12.81
+      value: 14.31
       objectReference: {fileID: 0}
     - target: {fileID: 8918392065816546228, guid: c896219c95547cc489d01fe2c42af200, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8567,13 +8581,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8918392065816546229, guid: c896219c95547cc489d01fe2c42af200, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 8918392065816546230, guid: c896219c95547cc489d01fe2c42af200, type: 3}
       propertyPath: bodyTransform
       value: 
-      objectReference: {fileID: 1112964952}
+      objectReference: {fileID: 159526984}
     - target: {fileID: 8918392065816546231, guid: c896219c95547cc489d01fe2c42af200, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8918392067667528062, guid: c896219c95547cc489d01fe2c42af200, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8918392067667528062, guid: c896219c95547cc489d01fe2c42af200, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c896219c95547cc489d01fe2c42af200, type: 3}
@@ -17123,14 +17149,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 398584134}
     m_Modifications:
     - target: {fileID: 4659614339621942280, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
-      propertyPath: patrolPoint
-      value: 
-      objectReference: {fileID: 93911355}
-    - target: {fileID: 4659614339621942280, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
-      propertyPath: patrolPoints.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4659614339621942280, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
       propertyPath: patrolPoints.Array.data[0]
       value: 
       objectReference: {fileID: 987674021}
@@ -17138,21 +17156,9 @@ PrefabInstance:
       propertyPath: patrolPoints.Array.data[1]
       value: 
       objectReference: {fileID: 944664023}
-    - target: {fileID: 4659614339621942280, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
-      propertyPath: patrolPoints.Array.data[2]
-      value: 
-      objectReference: {fileID: 1814773064}
-    - target: {fileID: 7085695601629998418, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
-      propertyPath: cam
-      value: 
-      objectReference: {fileID: 519420032}
     - target: {fileID: 8651591613201724445, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
       propertyPath: m_Name
       value: ZombieFemale1 (10)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8651591613201724446, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
-      propertyPath: Speed
-      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8651591613201724447, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
       propertyPath: m_RootOrder
@@ -17208,14 +17214,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 398584134}
     m_Modifications:
     - target: {fileID: 4659614339621942280, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
-      propertyPath: patrolPoint
-      value: 
-      objectReference: {fileID: 93911355}
-    - target: {fileID: 4659614339621942280, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
-      propertyPath: patrolPoints.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4659614339621942280, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
       propertyPath: patrolPoints.Array.data[0]
       value: 
       objectReference: {fileID: 1957726528}
@@ -17223,21 +17221,9 @@ PrefabInstance:
       propertyPath: patrolPoints.Array.data[1]
       value: 
       objectReference: {fileID: 2080021710}
-    - target: {fileID: 4659614339621942280, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
-      propertyPath: patrolPoints.Array.data[2]
-      value: 
-      objectReference: {fileID: 1814773064}
-    - target: {fileID: 7085695601629998418, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
-      propertyPath: cam
-      value: 
-      objectReference: {fileID: 519420032}
     - target: {fileID: 8651591613201724445, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
       propertyPath: m_Name
       value: ZombieFemale1 (12)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8651591613201724446, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
-      propertyPath: Speed
-      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8651591613201724447, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
       propertyPath: m_RootOrder
@@ -17323,14 +17309,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 398584134}
     m_Modifications:
     - target: {fileID: 4659614339621942280, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
-      propertyPath: patrolPoint
-      value: 
-      objectReference: {fileID: 93911355}
-    - target: {fileID: 4659614339621942280, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
-      propertyPath: patrolPoints.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4659614339621942280, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
       propertyPath: patrolPoints.Array.data[0]
       value: 
       objectReference: {fileID: 1188515147}
@@ -17338,21 +17316,9 @@ PrefabInstance:
       propertyPath: patrolPoints.Array.data[1]
       value: 
       objectReference: {fileID: 860776790}
-    - target: {fileID: 4659614339621942280, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
-      propertyPath: patrolPoints.Array.data[2]
-      value: 
-      objectReference: {fileID: 1814773064}
-    - target: {fileID: 7085695601629998418, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
-      propertyPath: cam
-      value: 
-      objectReference: {fileID: 519420032}
     - target: {fileID: 8651591613201724445, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
       propertyPath: m_Name
       value: ZombieFemale1 (8)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8651591613201724446, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
-      propertyPath: Speed
-      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8651591613201724447, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
       propertyPath: m_RootOrder
@@ -18314,7 +18280,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -34.93, y: 12.81, z: -10}
+  m_LocalPosition: {x: -33.95, y: 14.31, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -18333,14 +18299,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 398584134}
     m_Modifications:
     - target: {fileID: 4659614339621942280, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
-      propertyPath: patrolPoint
-      value: 
-      objectReference: {fileID: 93911355}
-    - target: {fileID: 4659614339621942280, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
-      propertyPath: patrolPoints.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4659614339621942280, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
       propertyPath: patrolPoints.Array.data[0]
       value: 
       objectReference: {fileID: 899097142}
@@ -18348,21 +18306,9 @@ PrefabInstance:
       propertyPath: patrolPoints.Array.data[1]
       value: 
       objectReference: {fileID: 1832672446}
-    - target: {fileID: 4659614339621942280, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
-      propertyPath: patrolPoints.Array.data[2]
-      value: 
-      objectReference: {fileID: 1814773064}
-    - target: {fileID: 7085695601629998418, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
-      propertyPath: cam
-      value: 
-      objectReference: {fileID: 519420032}
     - target: {fileID: 8651591613201724445, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
       propertyPath: m_Name
       value: ZombieFemale1 (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8651591613201724446, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
-      propertyPath: Speed
-      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8651591613201724447, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
       propertyPath: m_RootOrder
@@ -18768,14 +18714,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 398584134}
     m_Modifications:
     - target: {fileID: 4659614339621942280, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
-      propertyPath: patrolPoint
-      value: 
-      objectReference: {fileID: 93911355}
-    - target: {fileID: 4659614339621942280, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
-      propertyPath: patrolPoints.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4659614339621942280, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
       propertyPath: patrolPoints.Array.data[0]
       value: 
       objectReference: {fileID: 2080021710}
@@ -18783,21 +18721,9 @@ PrefabInstance:
       propertyPath: patrolPoints.Array.data[1]
       value: 
       objectReference: {fileID: 1814773064}
-    - target: {fileID: 4659614339621942280, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
-      propertyPath: patrolPoints.Array.data[2]
-      value: 
-      objectReference: {fileID: 1814773064}
-    - target: {fileID: 7085695601629998418, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
-      propertyPath: cam
-      value: 
-      objectReference: {fileID: 519420032}
     - target: {fileID: 8651591613201724445, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
       propertyPath: m_Name
       value: ZombieFemale1 (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8651591613201724446, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
-      propertyPath: Speed
-      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8651591613201724447, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
       propertyPath: m_RootOrder
@@ -18845,6 +18771,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
+--- !u!1 &973543210 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8918392065816546231, guid: c896219c95547cc489d01fe2c42af200, type: 3}
+  m_PrefabInstance: {fileID: 164885009}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &973543212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 973543210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 275ffd049be1fca4abce9eba9e79dcfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 10
+  BodyTransform: {fileID: 0}
+  Animator: {fileID: 159526985}
+  MoveSpeedName: MoveSpeed
 --- !u!1 &987674020
 GameObject:
   m_ObjectHideFlags: 0
@@ -45096,14 +45043,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 398584134}
     m_Modifications:
     - target: {fileID: 4659614339621942280, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
-      propertyPath: patrolPoint
-      value: 
-      objectReference: {fileID: 93911355}
-    - target: {fileID: 4659614339621942280, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
-      propertyPath: patrolPoints.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4659614339621942280, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
       propertyPath: patrolPoints.Array.data[0]
       value: 
       objectReference: {fileID: 1379415643}
@@ -45111,21 +45050,9 @@ PrefabInstance:
       propertyPath: patrolPoints.Array.data[1]
       value: 
       objectReference: {fileID: 1188515147}
-    - target: {fileID: 4659614339621942280, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
-      propertyPath: patrolPoints.Array.data[2]
-      value: 
-      objectReference: {fileID: 1814773064}
-    - target: {fileID: 7085695601629998418, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
-      propertyPath: cam
-      value: 
-      objectReference: {fileID: 519420032}
     - target: {fileID: 8651591613201724445, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
       propertyPath: m_Name
       value: ZombieFemale1 (7)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8651591613201724446, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
-      propertyPath: Speed
-      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8651591613201724447, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
       propertyPath: m_RootOrder
@@ -45234,11 +45161,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1112964952 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 86392035494259699, guid: c896219c95547cc489d01fe2c42af200, type: 3}
-  m_PrefabInstance: {fileID: 164885009}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1148727754
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -45396,14 +45318,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 398584134}
     m_Modifications:
     - target: {fileID: 4659614339621942280, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
-      propertyPath: patrolPoint
-      value: 
-      objectReference: {fileID: 93911355}
-    - target: {fileID: 4659614339621942280, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
-      propertyPath: patrolPoints.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4659614339621942280, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
       propertyPath: patrolPoints.Array.data[0]
       value: 
       objectReference: {fileID: 944664023}
@@ -45411,21 +45325,9 @@ PrefabInstance:
       propertyPath: patrolPoints.Array.data[1]
       value: 
       objectReference: {fileID: 1957726528}
-    - target: {fileID: 4659614339621942280, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
-      propertyPath: patrolPoints.Array.data[2]
-      value: 
-      objectReference: {fileID: 1814773064}
-    - target: {fileID: 7085695601629998418, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
-      propertyPath: cam
-      value: 
-      objectReference: {fileID: 519420032}
     - target: {fileID: 8651591613201724445, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
       propertyPath: m_Name
       value: ZombieFemale1 (11)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8651591613201724446, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
-      propertyPath: Speed
-      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8651591613201724447, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
       propertyPath: m_RootOrder
@@ -45570,6 +45472,16 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8651591613201724447, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
   m_PrefabInstance: {fileID: 1779072309}
   m_PrefabAsset: {fileID: 0}
+--- !u!224 &1492324277 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 7041829845690012935, guid: c896219c95547cc489d01fe2c42af200, type: 3}
+  m_PrefabInstance: {fileID: 164885009}
+  m_PrefabAsset: {fileID: 0}
+--- !u!223 &1492324281 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 5776253254126946624, guid: c896219c95547cc489d01fe2c42af200, type: 3}
+  m_PrefabInstance: {fileID: 164885009}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1595216338 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3480958505805326522, guid: 5477166f751725a4caad9137ae92a389, type: 3}
@@ -45588,14 +45500,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 398584134}
     m_Modifications:
     - target: {fileID: 4659614339621942280, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
-      propertyPath: patrolPoint
-      value: 
-      objectReference: {fileID: 93911355}
-    - target: {fileID: 4659614339621942280, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
-      propertyPath: patrolPoints.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4659614339621942280, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
       propertyPath: patrolPoints.Array.data[0]
       value: 
       objectReference: {fileID: 470303929}
@@ -45603,21 +45507,9 @@ PrefabInstance:
       propertyPath: patrolPoints.Array.data[1]
       value: 
       objectReference: {fileID: 2056568781}
-    - target: {fileID: 4659614339621942280, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
-      propertyPath: patrolPoints.Array.data[2]
-      value: 
-      objectReference: {fileID: 1814773064}
-    - target: {fileID: 7085695601629998418, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
-      propertyPath: cam
-      value: 
-      objectReference: {fileID: 519420032}
     - target: {fileID: 8651591613201724445, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
       propertyPath: m_Name
       value: ZombieFemale1 (5)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8651591613201724446, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
-      propertyPath: Speed
-      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8651591613201724447, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
       propertyPath: m_RootOrder
@@ -76153,14 +76045,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 398584134}
     m_Modifications:
     - target: {fileID: 4659614339621942280, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
-      propertyPath: patrolPoint
-      value: 
-      objectReference: {fileID: 93911355}
-    - target: {fileID: 4659614339621942280, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
-      propertyPath: patrolPoints.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4659614339621942280, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
       propertyPath: patrolPoints.Array.data[0]
       value: 
       objectReference: {fileID: 1832672446}
@@ -76168,21 +76052,9 @@ PrefabInstance:
       propertyPath: patrolPoints.Array.data[1]
       value: 
       objectReference: {fileID: 470303929}
-    - target: {fileID: 4659614339621942280, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
-      propertyPath: patrolPoints.Array.data[2]
-      value: 
-      objectReference: {fileID: 1814773064}
-    - target: {fileID: 7085695601629998418, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
-      propertyPath: cam
-      value: 
-      objectReference: {fileID: 519420032}
     - target: {fileID: 8651591613201724445, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
       propertyPath: m_Name
       value: ZombieFemale1 (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8651591613201724446, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
-      propertyPath: Speed
-      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8651591613201724447, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
       propertyPath: m_RootOrder
@@ -76330,14 +76202,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 398584134}
     m_Modifications:
     - target: {fileID: 4659614339621942280, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
-      propertyPath: patrolPoint
-      value: 
-      objectReference: {fileID: 93911355}
-    - target: {fileID: 4659614339621942280, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
-      propertyPath: patrolPoints.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4659614339621942280, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
       propertyPath: patrolPoints.Array.data[0]
       value: 
       objectReference: {fileID: 2080021710}
@@ -76345,21 +76209,9 @@ PrefabInstance:
       propertyPath: patrolPoints.Array.data[1]
       value: 
       objectReference: {fileID: 1814773064}
-    - target: {fileID: 4659614339621942280, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
-      propertyPath: patrolPoints.Array.data[2]
-      value: 
-      objectReference: {fileID: 1814773064}
-    - target: {fileID: 7085695601629998418, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
-      propertyPath: cam
-      value: 
-      objectReference: {fileID: 519420032}
     - target: {fileID: 8651591613201724445, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
       propertyPath: m_Name
       value: ZombieFemale1 (13)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8651591613201724446, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
-      propertyPath: Speed
-      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8651591613201724447, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
       propertyPath: m_RootOrder
@@ -76415,14 +76267,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 398584134}
     m_Modifications:
     - target: {fileID: 4659614339621942280, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
-      propertyPath: patrolPoint
-      value: 
-      objectReference: {fileID: 93911355}
-    - target: {fileID: 4659614339621942280, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
-      propertyPath: patrolPoints.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4659614339621942280, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
       propertyPath: patrolPoints.Array.data[0]
       value: 
       objectReference: {fileID: 860776790}
@@ -76430,21 +76274,9 @@ PrefabInstance:
       propertyPath: patrolPoints.Array.data[1]
       value: 
       objectReference: {fileID: 987674021}
-    - target: {fileID: 4659614339621942280, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
-      propertyPath: patrolPoints.Array.data[2]
-      value: 
-      objectReference: {fileID: 1814773064}
-    - target: {fileID: 7085695601629998418, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
-      propertyPath: cam
-      value: 
-      objectReference: {fileID: 519420032}
     - target: {fileID: 8651591613201724445, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
       propertyPath: m_Name
       value: ZombieFemale1 (9)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8651591613201724446, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
-      propertyPath: Speed
-      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8651591613201724447, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
       propertyPath: m_RootOrder
@@ -76612,7 +76444,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1841881029}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -34.93, y: 12.81, z: -10}
+  m_LocalPosition: {x: -33.95, y: 14.31, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1752756427}
@@ -142177,14 +142009,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 398584134}
     m_Modifications:
     - target: {fileID: 4659614339621942280, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
-      propertyPath: patrolPoint
-      value: 
-      objectReference: {fileID: 93911355}
-    - target: {fileID: 4659614339621942280, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
-      propertyPath: patrolPoints.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4659614339621942280, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
       propertyPath: patrolPoints.Array.data[0]
       value: 
       objectReference: {fileID: 1814773064}
@@ -142192,21 +142016,9 @@ PrefabInstance:
       propertyPath: patrolPoints.Array.data[1]
       value: 
       objectReference: {fileID: 899097142}
-    - target: {fileID: 4659614339621942280, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
-      propertyPath: patrolPoints.Array.data[2]
-      value: 
-      objectReference: {fileID: 1814773064}
-    - target: {fileID: 7085695601629998418, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
-      propertyPath: cam
-      value: 
-      objectReference: {fileID: 519420032}
     - target: {fileID: 8651591613201724445, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
       propertyPath: m_Name
       value: ZombieFemale1 (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8651591613201724446, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
-      propertyPath: Speed
-      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8651591613201724447, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
       propertyPath: m_RootOrder
@@ -142337,14 +142149,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 398584134}
     m_Modifications:
     - target: {fileID: 4659614339621942280, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
-      propertyPath: patrolPoint
-      value: 
-      objectReference: {fileID: 93911355}
-    - target: {fileID: 4659614339621942280, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
-      propertyPath: patrolPoints.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4659614339621942280, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
       propertyPath: patrolPoints.Array.data[0]
       value: 
       objectReference: {fileID: 899097142}
@@ -142352,21 +142156,9 @@ PrefabInstance:
       propertyPath: patrolPoints.Array.data[1]
       value: 
       objectReference: {fileID: 1814773064}
-    - target: {fileID: 4659614339621942280, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
-      propertyPath: patrolPoints.Array.data[2]
-      value: 
-      objectReference: {fileID: 1814773064}
-    - target: {fileID: 7085695601629998418, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
-      propertyPath: cam
-      value: 
-      objectReference: {fileID: 519420032}
     - target: {fileID: 8651591613201724445, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
       propertyPath: m_Name
       value: ZombieFemale1 (14)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8651591613201724446, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
-      propertyPath: Speed
-      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8651591613201724447, guid: e9ce099fa93f5294d82d121d6c3387a9, type: 3}
       propertyPath: m_RootOrder

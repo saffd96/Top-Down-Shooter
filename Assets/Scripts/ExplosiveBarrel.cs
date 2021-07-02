@@ -51,14 +51,14 @@ public class ExplosiveBarrel : DamageableObject
     {
         var unitsInRadius = Physics2D.OverlapCircleAll(transform.position, damageArea);
 
-        foreach(Collider2D baseUnit in unitsInRadius)
+        foreach(var baseUnit in unitsInRadius)
         {
             var unit = baseUnit.GetComponent<DamageableObject>();
-
-            if (unit is ExplosiveBarrel explosiveBarrel)
-            {
-                explosiveBarrel.Explode();
-            }
+            //
+            // if (unit is ExplosiveBarrel explosiveBarrel)
+            // {
+            //     explosiveBarrel.Explode();
+            // }
             
             if (unit!=null)
             {

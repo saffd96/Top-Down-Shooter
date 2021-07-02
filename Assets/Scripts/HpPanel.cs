@@ -24,7 +24,7 @@ public class HpPanel : MonoBehaviour
 
     private void LateUpdate()
     {
-      //  transform.up = Vector2.up;
+        transform.rotation = Quaternion.AngleAxis(0, Vector2.up);
     }
 
     #endregion
